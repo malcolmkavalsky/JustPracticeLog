@@ -51,7 +51,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/plan_blue_64"
-            android:onClick="planButtonHandler"
+            android:onClick="planTabletButtonHandler"
             android:padding="18dp"
             android:text="Plan"
             android:textAppearance="?android:attr/textAppearanceLarge"

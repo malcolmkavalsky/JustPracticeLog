@@ -28,6 +28,6 @@
 
         </TableLayout>
     </ScrollView>
-    <include android:id="@+id/Header" layout="@layout/shortcuts" />
+    <include layout="@layout/shortcuts" />
 
 </LinearLayout>

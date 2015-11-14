@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:background="#000"
     android:orientation="horizontal"
-    android:paddingTop="4dp">
+    android:padding="8dp"
+    >
 
     <Button
         android:id="@+id/homeTabletButton"

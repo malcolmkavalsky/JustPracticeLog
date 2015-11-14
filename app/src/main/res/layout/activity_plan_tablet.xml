@@ -1,32 +1,47 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
->
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/TitleBar"
         layout="@layout/titlebar_progress" />
+
     <include
-    android:id="@+id/TablePlanHeader"
-    layout="@layout/activity_plan_tablet_header" />
+        android:id="@+id/TablePlanHeader"
+        layout="@layout/activity_plan_tablet_header" />
 
-<ScrollView
-    android:id="@+id/ScrollView01"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_weight="1">
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
 
-    <TableLayout
-        android:id="@+id/TableLayout01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:collapseColumns="0,12,13">
+        <TableLayout
+            android:id="@+id/TableLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <include layout="@layout/activity_plan_tablet_row" />
+            <include layout="@layout/activity_plan_tablet_row" />
 
-    </TableLayout>
-</ScrollView>
+            <include layout="@layout/activity_plan_tablet_row" />
+
+            <include layout="@layout/activity_plan_tablet_row" />
+
+            <include layout="@layout/activity_plan_tablet_row" />
+
+            <include layout="@layout/activity_plan_tablet_row" />
+
+            <include layout="@layout/activity_plan_tablet_row" />
+
+            <include layout="@layout/activity_plan_tablet_row" />
+
+            <include layout="@layout/activity_plan_tablet_row" />
+
+        </TableLayout>
+    </ScrollView>
+
     <include
         android:id="@+id/shortcutWindow"
         layout="@layout/shortcuts" />

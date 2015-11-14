@@ -25,27 +25,32 @@ public class Shortcuts {
 
         // For regular phones
         Button b = (Button) parent.findViewById(R.id.homeButton);
+        int bnum = 0;
         if (b != null) {
             b.setOnClickListener(new homeButtonHandler());
             lbuttons.add(b);
+            enable(bnum++);
         }
 
         b = (Button) parent.findViewById(R.id.piecesButton);
         if (b != null) {
             b.setOnClickListener(new piecesButtonHandler());
             lbuttons.add(b);
+            enable(bnum++);
         }
 
         b = (Button) parent.findViewById(R.id.planButton);
         if (b != null) {
             b.setOnClickListener(new planButtonHandler());
             lbuttons.add(b);
+            enable(bnum++);
         }
 
         b = (Button) parent.findViewById(R.id.practiceButton);
         if (b != null) {
             b.setOnClickListener(new practiceButtonHandler());
             lbuttons.add(b);
+            enable(bnum++);
         }
 
         // For tablets using shortcuts.xml for sw600dp
@@ -53,24 +58,28 @@ public class Shortcuts {
         if (b != null) {
             b.setOnClickListener(new homeTabletButtonHandler());
             lbuttons.add(b);
+            enable(bnum++);
         }
 
         b = (Button) parent.findViewById(R.id.piecesTabletButton);
         if (b != null) {
             b.setOnClickListener(new piecesTabletButtonHandler());
             lbuttons.add(b);
+            enable(bnum++);
         }
 
         b = (Button) parent.findViewById(R.id.planTabletButton);
         if (b != null) {
             b.setOnClickListener(new planTabletButtonHandler());
             lbuttons.add(b);
+            enable(bnum++);
         }
 
         b = (Button) parent.findViewById(R.id.practiceTabletButton);
         if (b != null) {
             b.setOnClickListener(new practiceTabletButtonHandler());
             lbuttons.add(b);
+            enable(bnum++);
         }
         disable(buttonNumber);
     }
@@ -79,9 +88,16 @@ public class Shortcuts {
         Button b = lbuttons.get(buttonNumber);
         b.setTextColor(Color.YELLOW);
         b.setTypeface(null, Typeface.BOLD);
+        b.setBackgroundResource(R.drawable.button_border_yellow);
         b.setEnabled(false);
     }
-
+    public void enable(int buttonNumber) {
+        Button b = lbuttons.get(buttonNumber);
+        b.setTextColor(Color.GRAY);
+        b.setTypeface(null, Typeface.NORMAL);
+        b.setBackgroundResource(R.drawable.button_border_gray);
+        b.setEnabled(true);
+    }
     private class homeButtonHandler implements View.OnClickListener {
         public void onClick(View v) {
             Intent intent = new Intent(myParent, MainActivity.class);
@@ -124,7 +140,7 @@ public class Shortcuts {
 
     private class planTabletButtonHandler implements View.OnClickListener {
         public void onClick(View v) {
-            Intent intent = new Intent(myParent, PlanListActivity.class);
+            Intent intent = new Intent(myParent, PlanTabletActivity.class);
             myParent.finish();
             myParent.startActivityForResult(intent, 0);
         }
