@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000"
+    android:orientation="horizontal"
+    android:paddingTop="4dp">
+
+
+    <Button
+        android:id="@+id/homeButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/home_white_24"
+        android:onClick="homeButtonHandler"
+        android:text="Home"
+        />
+
+    <Button
+        android:id="@+id/piecesButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/pieces_white_24"
+        android:onClick="piecesButtonHandler"
+        android:text="Pieces" />
+
+    <Button
+        android:id="@+id/planButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/plan_white_24"
+        android:onClick="planButtonHandler"
+        android:text="Plan" />
+
+    <Button
+        android:id="@+id/practiceButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/practice_white_24"
+        android:onClick="practiceButtonHandler"
+        android:text="Practice" />
+    <Button
+        android:id="@+id/calendarButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/calendar_white_24"
+        android:text="Calendar" />
+
+</LinearLayout>

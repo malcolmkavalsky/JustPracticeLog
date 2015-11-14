@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/transparent"
+    >
+    <Button
+        android:id="@+id/track"
+        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:text="1" />
+    <LinearLayout
+        android:layout_height="fill_parent"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:gravity="center"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"        >
+
+        <Button
+            android:id="@+id/piece"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            style="@style/h2"
+            android:textColor="#000"
+            android:layout_margin="4dp"
+            android:background="@android:color/transparent"
+            android:gravity="top|left"
+            android:text="Choose piece ..." />
+        <Button
+            android:id="@+id/goal"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="top|left"
+            style="@style/h3"
+            android:textColor="#f00"
+            android:layout_margin="4dp"
+            android:textStyle="italic"
+            android:text="Set goal ..." />
+    </LinearLayout>
+    <Button
+        android:id="@+id/minutes"
+        style="@style/planCellContentStyle"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:text="00:15" />
+
+    <LinearLayout style="@style/CheckBoxCellWrapper">
+        <CheckBox android:id="@+id/box0" style="@style/CheckBoxCell" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/CheckBoxCellWrapper">
+        <CheckBox android:id="@+id/box1" style="@style/CheckBoxCell" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/CheckBoxCellWrapper">
+        <CheckBox android:id="@+id/box2" style="@style/CheckBoxCell" />
+    </LinearLayout>
+    <LinearLayout style="@style/CheckBoxCellWrapper">
+        <CheckBox android:id="@+id/box3" style="@style/CheckBoxCell" />
+    </LinearLayout>
+    <LinearLayout style="@style/CheckBoxCellWrapper">
+        <CheckBox android:id="@+id/box4" style="@style/CheckBoxCell" />
+    </LinearLayout>
+    <LinearLayout style="@style/CheckBoxCellWrapper">
+        <CheckBox android:id="@+id/box5" style="@style/CheckBoxCell" />
+    </LinearLayout>
+    <LinearLayout style="@style/CheckBoxCellWrapper">
+        <CheckBox android:id="@+id/box6" style="@style/CheckBoxCell" />
+    </LinearLayout>
+
+</TableRow>

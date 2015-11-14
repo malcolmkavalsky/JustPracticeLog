@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.malcolm.justpracticelog" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PiecesActivity"
+            android:label="@string/title_activity_pieces" >
+        </activity>
+        <activity
+            android:name=".PiecesByComposerActivity"
+            android:label="@string/title_activity_pieces_by_composer" >
+        </activity>
+        <activity
+            android:name=".PieceViewActivity"
+            android:label="@string/title_activity_piece_view" >
+        </activity>
+        <activity
+            android:name=".PracticeSessionActivity"
+            android:label="@string/title_activity_practice_session"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".PlanListActivity"
+            android:label="@string/title_activity_plan" >
+        </activity>
+        <activity
+            android:name=".PlanEditorActivity"
+            android:label="@string/title_activity_plan_editor" >
+        </activity>
+        <activity
+            android:name=".PracticeListActivity"
+            android:label="@string/title_activity_practice_list" >
+        </activity>
+        <activity
+            android:name=".PlanTabletActivity"
+            android:label="@string/title_activity_plan_tablet" >
+        </activity>
+        <activity
+            android:name=".PracticeTabletActivity"
+            android:label="@string/title_activity_practice_tablet" >
+        </activity>
+    </application>
+
+</manifest>

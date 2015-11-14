@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:background="#fff"
+    android:id="@+id/tableLayout"
+   >
+	<TableRow android:id="@+id/topRow">
+	    <TextView android:id="@+id/rowTopLeft" 
+	        android:textStyle="bold" 
+	        android:text="rowTopLeft"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_weight="1" android:gravity="left"
+			android:paddingLeft="5dp"/>
+	    <TextView android:id="@+id/rowTopRight"	      
+	        android:textStyle="bold" android:typeface="monospace"
+	        android:text="rowTopRight"
+	        android:layout_weight="1"
+	        android:layout_gravity="right|top"
+			android:gravity="right|top" android:paddingRight="5dp"/>
+	</TableRow>
+    <TableRow android:id="@+id/bottomRow">
+	    <TextView android:id="@+id/rowBottomLeft" 
+	        android:text="rowBottomLeft"
+			android:layout_weight="1" android:gravity="left" android:paddingLeft="5dp"/>
+	    <TextView android:id="@+id/rowBottomRight" 
+	        android:text="rowBottomRight"
+	        android:layout_weight="1" android:gravity="right" android:paddingRight="5dp"/>
+	</TableRow>
+</TableLayout>

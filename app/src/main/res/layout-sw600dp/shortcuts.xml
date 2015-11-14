@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000"
+    android:orientation="horizontal"
+    android:paddingTop="4dp">
+
+    <Button
+        android:id="@+id/homeTabletButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/home_white_24"
+        android:text="Home" />
+
+    <Button
+        android:id="@+id/piecesTabletButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/pieces_white_24"
+        android:text="Pieces" />
+
+    <Button
+        android:id="@+id/planTabletButton"
+        style="@style/shortcuts"
+        android:drawableTop="@android:drawable/ic_menu_edit"
+        android:text="Plan" />
+
+    <Button
+        android:id="@+id/practiceTabletButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/practice_white_24"
+        android:text="Practice" />
+    <Button
+        android:id="@+id/calendarTabletButton"
+        style="@style/shortcuts"
+        android:drawableTop="@android:drawable/ic_menu_my_calendar"
+        android:text="Calendar" />
+    <Button
+        android:id="@+id/recitalTabletButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/friends_white_24"
+        android:text="Recital" />
+    <Button
+        android:id="@+id/settingsTabletButton"
+        style="@style/shortcuts"
+        android:drawableTop="@drawable/settings_white_24"
+        android:text="Settings" />
+</LinearLayout>

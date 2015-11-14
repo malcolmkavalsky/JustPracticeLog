@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="com.example.malcolm.justpracticelog.PracticeTabletActivity">
+
+    <include android:id="@+id/Header" layout="@layout/titlebar_progress" />
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <TableLayout
+            android:id="@+id/TableLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            >
+            <include android:id="@+id/Header" layout="@layout/activity_practice_tablet_header" />
+            <include layout="@layout/activity_practice_tablet_row_header" />
+            <include layout="@layout/activity_practice_tablet_row" />
+            <include layout="@layout/activity_practice_tablet_row" />
+            <include layout="@layout/activity_practice_tablet_row_header" />
+            <include layout="@layout/activity_practice_tablet_row" />
+            <include layout="@layout/activity_practice_tablet_row" />
+
+        </TableLayout>
+    </ScrollView>
+    <include android:id="@+id/Header" layout="@layout/shortcuts" />
+
+</LinearLayout>

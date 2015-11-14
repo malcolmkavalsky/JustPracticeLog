@@ -1,0 +1,177 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <include
+        android:id="@+id/Header"
+        layout="@layout/titlebar_progress" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="Plan your practice, and practice your plan!"
+        android:textSize="20dp"
+        android:textStyle="italic|bold" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/pieces_blue_64"
+            android:onClick="piecesButtonHandler"
+            android:padding="18dp"
+            android:text="Pieces"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/plan_blue_64"
+            android:onClick="planButtonHandler"
+            android:padding="18dp"
+            android:text="Plan"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/practice_blue_64"
+            android:onClick="practiceButtonHandler"
+            android:padding="18dp"
+            android:text="Practice"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/calendar_blue_64"
+            android:padding="18dp"
+            android:text="Calendar"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/friends_blue_64"
+            android:padding="18dp"
+            android:text="Recital"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/settings_blue_64"
+            android:onClick="settingsButtonHandler"
+            android:padding="18dp"
+            android:text="Settings"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/log_blue_64"
+            android:padding="18dp"
+            android:text="Log"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff" />
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/log_blue_64"
+            android:padding="18dp"
+            android:text="Import Database"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff"
+            android:onClick="importButtonHandler"/>
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/log_blue_64"
+            android:padding="18dp"
+            android:text="Export Database"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0000ff"
+            android:onClick="exportButtonHandler"/>
+
+    </LinearLayout>
+</LinearLayout>

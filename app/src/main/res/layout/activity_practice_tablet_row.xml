@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="1dp">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="1dp"
+        android:layout_weight="0.8"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pieceNameTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="left"
+                android:text="Bach - Chaconne"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#070" />
+
+            <TextView
+                android:id="@+id/goalTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="#fff"
+                android:text="Polish for concert"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#777"
+                android:textStyle="italic" />
+            >
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/practicePieceButton"
+            android:src="@drawable/practice_blue_24"
+            android:background="@android:drawable/btn_default"
+             />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/day0"
+        style="@style/practiceCellContentStyle"
+        android:text="35/30\nSuper slow, super articulation\n10x tough parts" />
+
+    <Button
+        android:id="@+id/day1"
+        style="@style/practiceCellContentStyle" />
+
+
+    <Button
+        android:id="@+id/day2"
+        style="@style/practiceCellContentStyle" />
+
+
+    <Button
+        android:id="@+id/day3"
+        style="@style/practiceCellContentStyle" />
+
+    <Button
+        android:id="@+id/day4"
+        style="@style/practiceCellContentStyle" />
+
+    <Button
+        android:id="@+id/day5"
+        style="@style/practiceCellContentStyle" />
+
+    <Button
+        android:id="@+id/day6"
+        style="@style/practiceCellContentStyle" />
+
+
+</TableRow>
