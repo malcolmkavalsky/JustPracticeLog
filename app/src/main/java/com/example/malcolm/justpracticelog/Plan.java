@@ -1,6 +1,7 @@
 package com.example.malcolm.justpracticelog;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,6 +29,7 @@ public class Plan {
 
     final static String DB_FILE_NAME = "plans.txt";
     private static Map<Long, Plan> plans;
+    final static String TAG = "Plan";
 
     public Plan() {
         setMyid(Database.generateUniqueId());
@@ -36,7 +38,7 @@ public class Plan {
         setPriority(0);
         goal = new String();
         notes = new String();
-        days = new String();
+        days = "_______";
     }
 
     public Plan(long myid) {
@@ -185,7 +187,15 @@ public class Plan {
         else
             return true;
     }
-
+    public void setPracticeOn(int day, boolean on) {
+        char s[] = days.toCharArray();
+        String cday = "SMTWTFS";
+        if( on )
+            s[day] = cday.charAt(day);
+        else
+            s[day] = '_';
+        days = String.copyValueOf(s);
+    }
     public static int getTotalPlanTime() {
         int minutes = 0;
         for (Plan item : getAllPlans()) {
@@ -208,18 +218,31 @@ public class Plan {
 
     public static void changePlanPriority(Plan plan) {
         plans.remove(plan.getMyid());
+        plans.put(plan.getMyid(),plan);
+        int newPriority = plan.getPriority();
         List<Plan> lplans = getAllPlans();
+        // printPlansToLog("Before change", lplans);
+        // All plan items with greater or equal priority need to be incremented
+        for( Plan item : lplans) {
+            if ( item.getMyid() != plan.getMyid()) {
+                if (item.getPriority() >= newPriority)
+                    item.setPriority(item.getPriority() + 1);
+            }
+        }
+        // Now re-sort list based on priority
         Collections.sort(lplans, new Comparator<Plan>() {
             public int compare(Plan s1, Plan s2) {
                 return (s1.getPriority() - s2.getPriority());
 
             }
         });
-        if (plan.getPriority() >= lplans.size())
-            lplans.add(plan);
-        else
-            lplans.set(plan.getPriority() - 1, plan);
-        renumberPlansPriorities(lplans);
+        // printPlansToLog("After sort", lplans);
+
+        //if (plan.getPriority() >= lplans.size())
+         //   lplans.add(plan);
+        //else
+         //   lplans.set(plan.getPriority() - 1, plan);
+        // renumberPlansPriorities(lplans);
         saveDatabase();
     }
 
@@ -241,6 +264,12 @@ public class Plan {
             }
         });
         renumberPlansPriorities(lplans);
+    }
+    public static void  printPlansToLog(String msg, List<Plan> lplans) {
+        for( Plan item: lplans) {
+            Piece piece = new Piece(item.getPieceId());
+            Log.d(TAG, msg + ":" + item.getPriority() + " " + piece.getName());
+        }
     }
     // CRUD interface:create, read, update, delete
 
@@ -271,7 +300,10 @@ public class Plan {
         plans.remove(plan.getMyid());
         saveDatabase();
     }
-
+    public static void delete(long planid) {
+        plans.remove(planid);
+        saveDatabase();
+    }
     public static Plan add(Plan plan) {
         create(plan);
         return plan;
@@ -285,7 +317,23 @@ public class Plan {
 
 
     public static List<Plan> getAllPlans() {
-        return new ArrayList<Plan>(plans.values());
+        ArrayList<Plan> lplans = new ArrayList<Plan>(plans.values());
+        // Now re-sort list based on priority
+        Collections.sort(lplans, new Comparator<Plan>() {
+            public int compare(Plan s1, Plan s2) {
+                return (s1.getPriority() - s2.getPriority());
+
+            }
+        });
+        return lplans;
+    }
+
+    public static List<Integer> getAllPriorities() {
+        List<Plan> lplans = getAllPlans();
+        ArrayList<Integer> lpriorities = new ArrayList<Integer>();
+        for( Plan item: lplans)
+            lpriorities.add(item.getPriority());
+        return lpriorities;
     }
 
     public static Plan getForPieceId(long pieceId) {
@@ -329,7 +377,7 @@ public class Plan {
     }
 
     public static void saveDatabase() {
-        normalizePlansPriorities();
+        // normalizePlansPriorities();
         File file = new File(Database.context.getExternalFilesDir(null), DB_FILE_NAME);
         try {
             OutputStream outputStream = new FileOutputStream(file);

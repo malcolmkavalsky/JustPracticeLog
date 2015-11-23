@@ -51,6 +51,7 @@
         </activity>
         <activity
             android:name=".PlanTabletActivity"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_plan_tablet" >
         </activity>
         <activity

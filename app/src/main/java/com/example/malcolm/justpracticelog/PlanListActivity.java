@@ -48,9 +48,10 @@ public class PlanListActivity extends Activity {
                 public void cancelled() {
                 }
 
+                public void delete() {
+                }
                 public void all() {
                 }
-
                 public void add() {
                 }
             };

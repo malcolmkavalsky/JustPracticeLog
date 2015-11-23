@@ -30,14 +30,18 @@ public class PracticeSessionActivity extends Activity {
     PracticeTimer myTimer;
     PracticeNotes myNotes;
     ImageButton addNoteButton;
+    final static String TAG = "Practice";
+    long pieceId = 0;
+    int elapsedSeconds = 0;
+    int secondsRemaining;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        long pieceId = 0;
-        int secondsRemaining = 900;
+        Log.d(TAG, "onCreate");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice_session);
+
         editTextManual = (EditText) findViewById(R.id.editTextManual);
         editTextManual.setCursorVisible(false);
 
@@ -49,7 +53,7 @@ public class PracticeSessionActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         Set<String> keys = bundle.keySet();
         // We receive pieceid
-       if (keys.contains("pieceid")) {
+        if (keys.contains("pieceid")) {
             pieceId = bundle.getLong("pieceid");
             currentPlan = Plan.getForPieceId(pieceId);
             if (currentPlan != null) {
@@ -59,8 +63,11 @@ public class PracticeSessionActivity extends Activity {
                 secondsRemaining = (currentPlan.getMinutes() - practiced) * 60;
                 if (secondsRemaining < 0)
                     secondsRemaining = 0;
-            } else
+                editTextManual.setText(Integer.toString(currentPlan.getMinutes()));
+            } else {
+                secondsRemaining = 900;
                 editTextGoal.setText("No goal");
+            }
         }
 
         currentPiece = new Piece(pieceId);
@@ -68,19 +75,39 @@ public class PracticeSessionActivity extends Activity {
         ((TextView) findViewById(R.id.textViewTitle)).setText(currentPiece.getName());
         Composer composer = new Composer(currentPiece.getComposerId());
         ((TextView) findViewById(R.id.textViewSubtitle)).setText(composer.getName());
+    }
 
+    protected void resumeScreen() {
         myMetronome = new PracticeMetronome(this);
-        myTimer = new PracticeTimer(this, secondsRemaining);
+        myTimer = new PracticeTimer(this,secondsRemaining, elapsedSeconds );
         myNotes = new PracticeNotes(this, pieceId);
 
     }
 
+    public void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause");
+
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume");
+        resumeScreen();
+    }
     public void onStop() {
-        myMetronome.close();
-        myTimer.close();
-        if( myNotes != null)
-            myNotes.close();
+        Log.d(TAG, "onStop");
+        closeAll();
         super.onStop();
+    }
+
+    public void closeAll() {
+        myMetronome.close();
+        elapsedSeconds = myTimer.getElapsedSeconds();
+        secondsRemaining -= elapsedSeconds;
+        myTimer.close();
+        // myRecorder.close();
+        myNotes.close();
     }
 
     public void backButtonHandler(View v) {

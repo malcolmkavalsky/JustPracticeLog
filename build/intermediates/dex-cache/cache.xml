@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/home/malcolm/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jar="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-ec344b00842330b3a85ca00578846d843599b168.jar" />
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/pre-dexed/debug/classes-951772f424ddfc62ae023f73d57291b34426a5f4.jar" />
     </item>
     <item
         jar="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
@@ -16,18 +16,18 @@
         <dex dex="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/pre-dexed/debug/classes-1f3e779e8b835dc7a08da87576035fbbb5cd2a70.jar" />
     </item>
     <item
-        jar="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/pre-dexed/debug/classes-951772f424ddfc62ae023f73d57291b34426a5f4.jar" />
-    </item>
-    <item
         jar="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
         <dex dex="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-9a08f2c4a63f58e799222de87bc51085e4ecebb1.jar" />
+    </item>
+    <item
+        jar="/home/malcolm/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/malcolm/Dvlp/AndroidStudioProjects/JustPracticeLog/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-ec344b00842330b3a85ca00578846d843599b168.jar" />
     </item>
 
 </items>

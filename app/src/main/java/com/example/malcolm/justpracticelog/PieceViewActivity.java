@@ -79,8 +79,8 @@ public class PieceViewActivity extends Activity {
         if ( piece != null)
             Toast.makeText(getApplicationContext(), "Already exists", Toast.LENGTH_SHORT).show();
         else {
-            piece.setName(name);
-            Piece.update(piece);
+            currentPiece.setName(name);
+            Piece.update(currentPiece);
             setResult(Activity.RESULT_OK, null);
             finish();
         }

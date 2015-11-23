@@ -2,6 +2,7 @@ package com.example.malcolm.justpracticelog;
 
 import android.app.Activity;
 import android.media.MediaPlayer;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -21,15 +22,18 @@ public class PracticeTimer extends Timer {
     //	ImageButton timerAlarmButton;
     Activity parent;
     MediaPlayer mediaPlayer;
+    final static String TAG = "PracticeTimer";
 
-    PracticeTimer(PracticeSessionActivity parent, int startCounter) {
+    PracticeTimer(PracticeSessionActivity parent, int startCounter, int elapsedSeconds) {
+        Log.d(TAG, "PracticeTimer: startCounter " + startCounter + " elapsedSeconds " + elapsedSeconds);
+
         this.parent = parent;
-
+        this.elapsedSeconds = elapsedSeconds;
         timerButton = (ImageButton) parent.findViewById(R.id.timerButton);
         timerButton.setOnClickListener(new timerToggle());
 //		timerAlarmButton = (ImageButton)parent.findViewById(R.id.timerAlarm);
         timerElapsedTextView = (TextView) parent.findViewById(R.id.textViewTimerElapsed);
-        timerElapsedTextView.setText(MyTime.toString(MyTime.now()));
+//        timerElapsedTextView.setText(MyTime.toString(MyTime.now()));
 
         timerStartHms = MyTime.now();
         timerStartYmd = MyDate.today();

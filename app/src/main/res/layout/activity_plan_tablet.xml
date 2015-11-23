@@ -40,6 +40,7 @@
             <include layout="@layout/activity_plan_tablet_row" />
 
         </TableLayout>
+
     </ScrollView>
 
     <include

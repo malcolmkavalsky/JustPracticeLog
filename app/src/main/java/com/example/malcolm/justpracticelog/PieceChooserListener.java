@@ -5,4 +5,5 @@ public interface PieceChooserListener {
 	public void cancelled();
 	public void all();
 	public void add();
+	public void delete();
 }

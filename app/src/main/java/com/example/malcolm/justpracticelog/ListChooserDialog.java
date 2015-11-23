@@ -10,18 +10,19 @@ public class ListChooserDialog {
 	private Activity parent;
 	private ListChooserListener listener;
 	private boolean enable_add;
-	private boolean enable_all;
+	private boolean enable_delete;
 	
 	ListChooserDialog(Activity parent) {
 		this.parent = parent;
 		enable_add = false;
-    }
+		enable_delete = false;
+	}
 	
 	public void enableAdd() {
 		enable_add = true;
 	}	
-	public void enableAll() {
-		enable_all = true;
+	public void enableDelete() {
+		enable_delete = true;
 	}	
 	
 	public void open(String title, CharSequence[] names)
@@ -42,18 +43,18 @@ public class ListChooserDialog {
 			}}
 		);
 		if( enable_add) {
-			builder.setPositiveButton("New", new DialogInterface.OnClickListener() {
+			builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {
 					dialog.dismiss();	
 					listener.add();
 				}}
 					);
 		}
-		if( enable_all) {
-			builder.setNeutralButton("All", new DialogInterface.OnClickListener() {
+		if( enable_delete) {
+			builder.setNeutralButton("Delete", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {
-					dialog.dismiss();	
-					listener.all();
+					dialog.dismiss();
+					listener.delete();
 				}}
 					);
 		}

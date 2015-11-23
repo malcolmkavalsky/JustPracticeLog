@@ -5,26 +5,29 @@ import android.app.Activity;
 import java.util.List;
 
 public class PieceChooserDialog {
-	private Activity parent;
-	private ListChooserDialog dialog;
-	private ListChooserListener listChooserListener = 
-			new ListChooserListener() {
-		public void chose(int index) {
-			Piece piece = pieceList.get(index);
-			pieceChooserListener.chose(piece.getMyid());
-		}
-		public void cancelled() {
-			pieceChooserListener.cancelled();	
-		}
-		public void all() {
-			pieceChooserListener.all();	
-		}
-		public void add() {
-			pieceChooserListener.add();	
-		}
-	};
-	
-	List<Piece> pieceList;
+    private Activity parent;
+    private ListChooserDialog dialog;
+    private ListChooserListener listChooserListener =
+            new ListChooserListener() {
+                public void chose(int index) {
+                    Piece piece = pieceList.get(index);
+                    pieceChooserListener.chose(piece.getMyid());
+                }
+
+                public void cancelled() {
+                    pieceChooserListener.cancelled();
+                }
+
+                public void add() {
+                    pieceChooserListener.add();
+                }
+
+                public void delete() {
+                    pieceChooserListener.delete();
+                }
+            };
+
+    List<Piece> pieceList;
 	PieceChooserListener pieceChooserListener;
 	
 	PieceChooserDialog(Activity parent) {
@@ -36,8 +39,8 @@ public class PieceChooserDialog {
 	public void enableAdd() {
 		dialog.enableAdd();
 	}
-	public void enableAll() {
-		dialog.enableAll();
+	public void enableDelete() {
+		dialog.enableDelete();
 	}
 	public void open() {
 
